@@ -1,32 +1,3 @@
-//default memory section
-document.getElementById('eightGB').addEventListener('click', function () {
-    updatePrice('memory-cost', 0)
-});
-//sixteenGB memory section
-document.getElementById('sixteenGB').addEventListener('click', function () {
-    updatePrice('memory-cost', 200)
-});
-//default SSD section
-document.getElementById('ssd1').addEventListener('click', function () {
-    updatePrice('storage-cost', 0)
-})
-//512GB SSD section
-document.getElementById('ssd2').addEventListener('click', function () {
-    updatePrice('storage-cost', 200)
-})
-//1TB SSD section
-document.getElementById('ssd3').addEventListener('click', function () {
-    updatePrice('storage-cost', 300);
-})
-//Free dalivery section
-document.getElementById('free-delivery').addEventListener('click', function () {
-    updatePrice('delivery-cost', 0);
-})
-//Paid delivary section
-document.getElementById('paid-delivery').addEventListener('click', function () {
-    updatePrice('delivery-cost', 20);
-})
-
 function updatePrice(itemID, price) {
     const memoryCost = document.getElementById(itemID);
     memoryCost.innerText = price;
@@ -41,3 +12,18 @@ function updatePrice(itemID, price) {
     const total = document.getElementById('total-price');
     total.innerText = totalPrice;
 }
+
+function onclick(clickId, updateId, price) {
+    document.getElementById(clickId).addEventListener('click', function () {
+        updatePrice(updateId, price);
+    })
+}
+onclick('eightGB', 'memory-cost', 0);
+onclick('sixteenGB', 'memory-cost', 200);
+onclick('ssd1', 'storage-cost', 0);
+onclick('ssd2', 'storage-cost', 200);
+onclick('ssd3', 'storage-cost', 300);
+onclick('free-delivery', 'delivery-cost', 0);
+onclick('paid-delivery', 'delivery-cost', 20);
+
+
