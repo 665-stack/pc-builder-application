@@ -16,7 +16,9 @@ function updatePrice(itemID, price) {
 function onclick(clickId, updateId, price) {
     document.getElementById(clickId).addEventListener('click', function () {
         updatePrice(updateId, price);
+
     })
+
 }
 onclick('eightGB', 'memory-cost', 0);
 onclick('sixteenGB', 'memory-cost', 200);
